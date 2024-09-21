@@ -3,9 +3,7 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
-import '@fontsource-variable/bricolage-grotesque';
-
-
+import "@fontsource-variable/bricolage-grotesque";
 
 export interface Props {
   title: string;
@@ -21,51 +19,57 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "DroverTravel"
+  : "DroverTravel -  Copilot for your travel agency";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-    <SEO
-      title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
-      canonical={canonicalURL}
-      twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
-      }}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: "website",
-          title: `Astroship - Starter Template for Astro`,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: "Astroship Homepage Screenshot",
-        },
-      }}
-    />
-  </head>
-  <body>
-    <Navbar />
-    <slot />
-    <Footer />
-    <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-      img {
-        content-visibility: auto;
+  <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+  <SEO
+    title={makeTitle}
+    description="DroverTravel is a startup aiming to elevate and accelerate travel agencies"
+    canonical={canonicalURL}
+    openGraph={{
+      basic: {
+        url: canonicalURL,
+        type: "website",
+        title: `DroverTravel`,
+        image: resolvedImageWithDomain
+      },
+      image: {
+        alt: "Drover Travel"
       }
-    </style>
-  </body>
+    }}
+  />
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EBP01EQ288"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+
+    gtag("config", "G-EBP01EQ288");
+</script>
+<body>
+<Navbar />
+<slot />
+<Footer />
+<style is:global>
+    html {
+        scroll-behavior: smooth;
+    }
+    /* Improve Page speed */
+    /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+    img {
+        content-visibility: auto;
+    }
+</style>
+</body>
 </html>

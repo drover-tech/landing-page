@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="flex flex-col md:flex-row justify-between items-start mx-auto mt-16">
+  <div class="flex-1">
+    <h2 class="font-medium text-2xl text-gray-800" >Contact</h2>
+    <p class="text-lg leading-relaxed text-slate-500 mt-3">
+      Feedback? Want to collaborate? Send an email or give us a call.
+    </p>
+  </div>
+  <div class="mt-5 md:mt-0">
+    <div>
+      <div class="flex items-center mt-2 space-x-2 text-gray-600">
+        <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+        <span>12 W Loop Rd, Manhattan, NY 10044</span>
+      </div>
+      <div class="flex items-center mt-2 space-x-2 text-gray-600">
+        <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" />
+        <a href="mailto:stanley@drovertravel.com">stanley@drovertravel.com</a>
+      </div>
+      <div class="flex items-center mt-2 space-x-2 text-gray-600">
+        <Icon class="text-gray-400 w-4 h-4" name="uil:phone" />
+        <a href="mailto:1+(229) 222-3978">1+(229) 222-3978</a>
+      </div>
+    </div>
+  </div>
+</div>
