@@ -11,7 +11,7 @@ export default defineConfig({
   // Changed from 'hybrid' to 'server'
   output: "hybrid",
 
-  site: "https://astroship.web3templates.com",
+  site: "https://drovertravel.com",
   integrations: [tailwind(), mdx(), sitemap(), icon()],
   adapter: vercel(),
 });
