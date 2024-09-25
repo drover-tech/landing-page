@@ -1,26 +1,91 @@
 ---
+import { Image } from 'astro:assets';
 import Link from "@components/ui/link.astro";
+import DashboardImage from '../assets/Trimmed Dashboard.png'; // Import the image
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center md:pt-12 md:pb-24">
-  <div class=" md:order-1 hidden md:block">
+<section class="hero">
+  <div class="hero-content">
+    <!-- Existing hero content -->
+    <main
+      class="grid lg:grid-cols-2 place-items-center md:pt-12 md:pb-24">
+      <div class=" md:order-1 hidden md:block">
+      </div>
+      <div>
+        <h1
+          class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+          Supercharge Travel for your clients 🚀
+        </h1>
+        <p class="text-lg mt-4 text-slate-600 max-w-xl">
+          Automate the most time-consuming tasks and free up your time to deliver personalized experiences and scale your business with ease.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <Link
+            href="#calltoaction"
+            class="flex gap-1 items-center justify-center"
+            rel="noopener">
+             Join the waitlist
+          </Link>
+        </div>
+      </div>
+    </main>
   </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Supercharge Travel for your clients 🚀
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Automate the most time-consuming tasks and free up your time to deliver personalized experiences and scale your business with ease.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#calltoaction"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-         Join the waitlist
-      </Link>
-    </div>
+  <div class="hero-image">
+    <Image src={DashboardImage} alt="Dashboard" /> <!-- Use the imported image -->
   </div>
-</main>
+</section>
+
+<style>
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  position: relative; /* Add relative positioning to the hero section */
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  position: absolute; /* Position the image absolutely */
+  right: 0; /* Align the image to the right */
+  bottom: 0; /* Align the image to the bottom */
+  max-width: 50%; /* Adjust the width as needed */
+  margin-right: -2rem; /* Negative margin to counteract the padding of the parent */
+}
+
+.hero-image img {
+  width: 100%; /* Ensure the image takes the full width of its container */
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .hero-image {
+    margin-right: -4rem; /* Increase negative margin for smaller viewports */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    position: static; /* Reset positioning for smaller screens */
+  }
+
+  .hero-image {
+    position: static; /* Reset positioning for smaller screens */
+    margin-top: 1rem;
+    justify-content: center;
+    max-width: 100%; /* Ensure the image takes the full width on smaller screens */
+    margin-right: -2rem; /* Increase negative margin for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    margin-right: -4rem; /* Further increase negative margin for very small screens */
+  }
+}
+</style>
